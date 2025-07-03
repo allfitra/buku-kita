@@ -1,24 +1,34 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { bookList } from "../data/database";
+import { Link, useParams } from "react-router-dom";
 import { MainLayout } from "../../../components/Layouts/MainLayout";
 import StaticZipFlipBook from "../../../utils/ZipFlipBook";
-import TestBook from "../../../utils/TestBook";
 
 const ReadingPage = () => {
   const { bookId } = useParams();
+  const book = bookList.find((b) => b.id === parseInt(bookId));
 
-  // Gunakan format uc?export=download
-  const pdfPath = "./Buku1.pdf";
-
-  return (
-    <>
-      <MainLayout title="Baca Buku">
-        <div className="flex justify-center bg-gray-50">
-          <StaticZipFlipBook />
-          {/* <TestBook /> */}
+  if (!book) {
+    return (
+      <MainLayout title="Tidak ada Buku">
+        <div className="flex flex-col justify-center items-center h-screen bg-gray-50">
+          <h1 className="m-6 text-3xl text-red-600">Buku yang anda maksud tidak ditemukan.</h1>
+          <button>
+            <Link to="/" className="hover:underline text-2xl bg-blue-600 text-white px-4 py-2 rounded-lg">
+              Kembali ke halaman utama
+            </Link>
+          </button>
         </div>
       </MainLayout>
-    </>
+    );
+  }
+
+  return (
+    <MainLayout title={book.title}>
+      <div className="flex justify-center items-center h-screen bg-gray-50">
+        <StaticZipFlipBook filePath={book.filePath} />
+      </div>
+    </MainLayout>
   );
 };
 
