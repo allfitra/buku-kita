@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
     assetsInclude: ["**/*.worker.js"],
+    base: env.VITE_BASE_URL || "/",
     define: {
       "process.env": env,
     },
@@ -34,20 +35,3 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
-
-// export default defineConfig({
-//   plugins: [react(),
-//     tailwindcss({
-//       config: {
-//         content: [
-//           './src/**/*.{js,jsx,ts,tsx}',
-//           './public/index.html',
-//         ],
-//         theme: {
-//           extend: {},
-//         },
-//         plugins: [],
-//       },
-//     })
-//   ],
-// })
