@@ -1,3 +1,5 @@
 import CoverBook from './cover-book.jpg';
+import BackgroundImage from './read-background.jpg';
+import AvatarReading from './avatar-reading.png';
 
-export { CoverBook };
+export { CoverBook, BackgroundImage, AvatarReading };

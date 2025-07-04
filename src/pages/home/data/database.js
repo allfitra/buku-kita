@@ -1,4 +1,4 @@
-import { CoverBook } from "../../../assets";
+import { BackgroundImage, CoverBook } from "../../../assets";
 
 export const bookList = [
   {
@@ -9,34 +9,8 @@ export const bookList = [
     year: 2025,
     genre: ["Edukasi", "Orang Tua", "kekerasan seksual"],
     filePath: "/files/Book1.zip",
+    BackgroundImage: BackgroundImage,
     description:
       "Buku ini membahas tentang cara menjaga diri dari kekerasan seksual pada remaja dengan hambatan intelektual. Buku ini memberikan panduan praktis dan informasi penting untuk membantu remaja memahami dan menghindari situasi berbahaya.",
-  },
-  {
-    id: 2,
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    year: 2008,
-    genre: ["Programming", "Software Engineering", "Computer Science"],
-    cover: "https://covers.openlibrary.org/b/id/7100916-L.jpg",
-    description: "A handbook of agile software craftsmanship.",
-  },
-  {
-    id: 3,
-    title: "You Don't Know JS",
-    author: "Kyle Simpson",
-    year: 2015,
-    genre: ["Programming", "JavaScript"],
-    cover: "https://covers.openlibrary.org/b/id/8167892-L.jpg",
-    description: "A deep dive into the core mechanisms of the JavaScript language.",
-  },
-  {
-    id: 4,
-    title: "Introduction to Algorithms",
-    author: "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
-    year: 2009,
-    genre: ["Computer Science", "Algorithms"],
-    cover: "https://covers.openlibrary.org/b/id/8225261-L.jpg",
-    description: "A comprehensive textbook on algorithms and data structures.",
-  },
+  }
 ];
